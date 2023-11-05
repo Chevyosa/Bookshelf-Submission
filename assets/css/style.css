@@ -19,11 +19,140 @@ body{
 }
 
 .headerclass{
-    background-color: aquamarine;
+    background-color: #2B3499;
+    color: #FFFF;
     height: 80px;
     display: flex;
+
+    .navclass{
+        padding: 15px 100px;
+    }
 }
 
-.navclass{
-    padding: 15px 100px;
+.mainclass{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+section {
+    width: 45vw;
+    border-radius: 20px;
+    background: #FF6C22;
+    color: #FFFF;
+}
+
+.judul_kotak {
+    background-color: #2B3499;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.isi_kotak {
+    margin: 20px;
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.judul_kotak h2 {
+    text-align: center;
+    color: white;
+}
+
+.input_section .isi_kotak form .input {
+    margin: 10px 0;
+}
+
+.input_section .isi_kotak form button {
+    background-color: #2B3499;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    float: right;
+    display: block;
+    width: 30%;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input_section .isi_kotak form .input input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 15px;
+    margin-top: 10px;
+    border: #2B3499;
+    background-color: #FFFF;
+}
+
+.input_section .isi_kotak form .input label {
+    color: white;
+    font-weight: bold;
+}
+
+.input_section .isi_kotak form .input_inline {
+    margin: 12px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input_section .isi_kotak form .input_inline label {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search_section form {
+    display: grid;
+    grid-template-columns: auto 0.2fr 0fr;
+    grid-gap: 10px;
+}
+
+.search_section form label {
+    display: flex;
+    align-items: center;
+}
+
+.search_section p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+
+.search_section form input {
+    padding: 8px;
+    background-color: #FFFF;
+    border: #E5CFF7;
+    border-radius: 20px;
+}
+
+.search_section form button {
+    background-color: #2B3499;
+    font-weight: bold;
+    color: white;
+    border: #E5CFF7;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background-color: #2B3499;
+    padding: 20px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
 }
