@@ -1,82 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BookShelf Application</title>
-        <link rel="stylesheet" href="./assets/css/style.css">
-    </head>
-    <body>
-        <div class="my-wrapper">
-            <header class="my-header">
-                <nav class="my-nav">
-                    <h1>BookShelf Application</h1>
-                    <p>Your Smart Book Directory</p>
-                </nav>
-            </header>
-            <main class="my-main">
-                <section class="my-input-section">
-                    <div class="my-title-box">
-                      <h2>Masukkan Buku Baru</h2>
-                    </div>
-                    <div class="my-content-box">
-                      <form id="my-inputBook">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookShelf Application</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="my-wrapper">
+        <header class="my-header">
+            <nav class="my-nav">
+                <h1>BookShelf Application</h1>
+                <p>Your Smart Book Directory</p>
+            </nav>
+        </header>
+        <main class="my-main">
+            <section class="my-input-section">
+                <div class="my-title-box">
+                    <h2>Tambahkan Buku Baru</h2>
+                </div>
+                <div class="my-content-box">
+                    <form id="my-inputBook">
                         <div class="my-input">
-                          <label for="my-inputBookTitle">Judul</label>
-                          <input id="my-inputBookTitle" type="text" required>
+                            <label for="my-inputBookTitle">Judul Buku</label>
+                            <input id="my-inputBookTitle" type="text" required>
                         </div>
                         <div class="my-input">
-                          <label for="my-inputBookAuthor">Penulis</label>
-                          <input id="my-inputBookAuthor" type="text" required>
+                            <label for="my-inputBookAuthor">Pengarang</label>
+                            <input id="my-inputBookAuthor" type="text" required>
                         </div>
                         <div class="my-input">
-                          <label for="my-inputBookYear">Tahun</label>
-                          <input id="my-inputBookYear" type="number" required>
+                            <label for="my-inputBookYear">Tahun Terbit</label>
+                            <input id="my-inputBookYear" type="number" required>
                         </div>
                         <div class="my-input-inline">
-                          <input id="my-inputBookIsComplete" type="checkbox">
-                          <label for="my-inputBookIsComplete">Selesai dibaca</label>
+                            <input id="my-inputBookIsComplete" type="checkbox">
+                            <label for="my-inputBookIsComplete">Telah Dibaca</label>
                         </div>
-                        <button id="my-bookSubmit" type="submit">Kirim</button>
-                      </form>
-                    </div>
-                </section>
-                <section class="my-search-section">
-                    <div class="my-title-box">
-                      <h2>Cari Buku</h2>
-                    </div>
-                    <div class="my-content-box">
-                      <p>Kata Kunci</p>
-                      <form id="my-searchBook">
+                        <button id="my-bookSubmit" type="submit">Simpan</button>
+                    </form>
+                </div>
+            </section>
+            <section class="my-search-section">
+                <div class="my-title-box">
+                    <h2>Cari Buku</h2>
+                </div>
+                <div class="my-content-box">
+                    <p>Kata Kunci Pencarian</p>
+                    <form id="my-searchBook">
                         <input id="my-searchBookTitle" type="text">
                         <button id="my-searchSubmit" type="submit">Cari</button>
-                      </form>
+                    </form>
+                </div>
+            </section>
+            <section class="my-book-shelf">
+                <div class="my-title-box">
+                    <h2>Daftar Belum Selesai Dibaca</h2>
+                </div>
+                <div class="my-content-box">
+                    <div id="my-incompleteBookshelfList" class="my-book-list">
                     </div>
-                  </section>
-                  <section class="my-book-shelf">
-                    <div class="my-title-box">
-                      <h2>Belum selesai dibaca</h2>
+                </div>
+            </section>
+            <section class="my-book-shelf">
+                <div class="my-title-box">
+                    <h2>Daftar Telah Dibaca</h2>
+                </div>
+                <div class="my-content-box">
+                    <div id="my-completeBookshelfList" class="my-book-list">
                     </div>
-                    <div class="my-content-box">
-                      <div id="my-incompleteBookshelfList" class="my-book-list">
-                      </div>
-                    </div>
-                  </section>
-                  <section class="my-book-shelf">
-                    <div class="my-title-box">
-                      <h2>Selesai dibaca</h2>
-                    </div>
-                    <div class="my-content-box">
-                      <div id="my-completeBookshelfList" class="my-book-list">
-                      </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="my-footer">
-                &copy; 2023 BookShelf App
-            </footer>
-            <script src="./assets/js/javascript.js"></script>
-        </div>
-    </body>
+                </div>
+            </section>
+        </main>
+        <footer class="my-footer">
+            &copy; 2023 BookShelf App
+        </footer>
+        <script src="./assets/js/javascript.js"></script>
+    </div>
+</body>
 </html>
