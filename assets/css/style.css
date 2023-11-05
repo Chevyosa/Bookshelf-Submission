@@ -1,6 +1,8 @@
+/* CSS styles with updated class names for the modified HTML */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -8,120 +10,105 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper{
+.my-wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.headerclass{
+.my-header {
     background-color: #2B3499;
     color: #FFFF;
-    height: 80px;
-    display: flex;
-
-    .navclass{
-        padding: 15px 100px;
-    }
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
 }
 
-.mainclass{
+.my-main {
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
-section {
-    width: 45vw;
+.my-input-section, .my-search-section, .my-book-shelf {
+    width: 45%;
     border-radius: 20px;
     background: #FF6C22;
     color: #FFFF;
 }
 
-.judul_kotak {
+.my-title-box {
     background-color: #2B3499;
     padding: 10px;
     border-radius: 15px;
+    text-align: center;
 }
 
-.isi_kotak {
+.my-content-box {
     margin: 20px;
 }
 
-.input_section {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-}
-
-.judul_kotak h2 {
-    text-align: center;
-    color: white;
-}
-
-.input_section .isi_kotak form .input {
+.my-input-section form .my-input, .my-search-section form .my-input {
     margin: 10px 0;
 }
 
-.input_section .isi_kotak form button {
+.my-input-section form button, .my-search-section form button {
     background-color: #2B3499;
     color: white;
     border: 0;
     border-radius: 20px;
-    float: right;
     display: block;
     width: 30%;
     padding: 8px;
     cursor: pointer;
     font-weight: bold;
+    justify-content: center;
 }
 
-.input_section .isi_kotak form .input input {
+.my-input-section form .my-input input, .my-search-section form .my-input input {
     display: block;
     width: 100%;
     padding: 8px;
     border-radius: 15px;
     margin-top: 10px;
-    border: #2B3499;
+    border: 2px solid #2B3499;
     background-color: #FFFF;
 }
 
-.input_section .isi_kotak form .input label {
+.my-input-section form .my-input label, .my-search-section form .my-input label {
     color: white;
     font-weight: bold;
 }
 
-.input_section .isi_kotak form .input_inline {
+.my-input-section form .my-input-inline, .my-search-section form .my-input-inline {
     margin: 12px 0;
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.input_section .isi_kotak form .input_inline label {
+.my-input-section form .my-input-inline label, .my-search-section form .my-input-inline label {
     color: white;
     font-weight: bold;
     margin-right: 10px;
 }
 
-.search_section form {
-    display: grid;
-    grid-template-columns: auto 0.2fr 0fr;
+.my-search-section form {
+    display: flex;
+    grid-template-columns: auto 1fr;
     grid-gap: 10px;
 }
 
-.search_section form label {
-    display: flex;
-    align-items: center;
-}
-
-.search_section p {
+.my-search-section p {
     text-align: center;
     color: white;
     font-weight: bold;
@@ -129,30 +116,70 @@ section {
     margin-bottom: 10px;
 }
 
-.search_section form input {
+.my-search-section form input {
     padding: 8px;
     background-color: #FFFF;
-    border: #E5CFF7;
+    border: 2px solid #E5CFF7;
     border-radius: 20px;
+    width: 100%;
 }
 
-.search_section form button {
+.my-search-section form button {
     background-color: #2B3499;
     font-weight: bold;
     color: white;
-    border: #E5CFF7;
+    border: 2px solid #E5CFF7;
     border-radius: 20px;
     cursor: pointer;
 }
 
-footer {
-    text-align: center;
+.my-footer {
     background-color: #2B3499;
+    color: #FFFF;
     padding: 20px;
-    color: white;
+    width: 100%;
+    text-align: center;
+    align-items: center;
 }
 
-footer a {
+.my-footer a {
     color: white;
     text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .my-main {
+        flex-direction: column;
+    }
+
+    .my-input-section, .my-search-section, .my-book-shelf {
+        width: 90%;
+    }
+
+    .my-input-section form button, .my-search-section form button {
+        width: 50%;
+    }
+
+    .my-search-section form {
+        grid-template-columns: auto 1fr;
+    }
+
+    .my-search-section p {
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .my-main {
+        padding: 25px;
+    }
+
+    .my-input-section form input {
+        width: 100%;
+    }
+
+    .my-search-section form button {
+        width: 20vw;
+    }
 }
