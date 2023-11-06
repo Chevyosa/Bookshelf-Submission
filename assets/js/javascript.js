@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
     inputBuku.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const judulBuku = document.getElementById('my-inputBookTitle').value;
-        const pengarangBuku = document.getElementById('my-inputBookAuthor').value;
-        const tahunTerbitBuku = Number(document.getElementById('my-inputBookYear').value);
-        const isBukuSelesai = document.getElementById('my-inputBookIsComplete').checked;
+        const inputBookTitle = document.getElementById('my-inputBookTitle').value;
+        const inputBookAuthor = document.getElementById('my-inputBookAuthor').value;
+        const inputBookYear = Number(document.getElementById('my-inputBookYear').value);
+        const inputBookIsComplete = document.getElementById('my-inputBookIsComplete').checked;
 
         const isDuplikat = buku.some(b => b.judul === judulBuku);
 
@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             const bukuBaru = {
                 id: new Date().getTime(),
-                judul: judulBuku,
-                pengarang: pengarangBuku,
-                tahunTerbit: tahunTerbitBuku,
-                isSelesai: isBukuSelesai,
+                title: inputBookTitle,
+                author: inputBookAuthor,
+                year: inputBookYear,
+                isComplete: inputBookIsComplete,
             };
 
             buku.push(bukuBaru);
