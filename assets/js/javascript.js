@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputBookYear = Number(document.getElementById('my-inputBookYear').value);
         const inputBookIsComplete = document.getElementById('my-inputBookIsComplete').checked;
 
-        const isDuplikat = buku.some(b => b.judul === judulBuku);
+        const isDuplikat = buku.some(b => b.title === inputBookTitle);
 
         if (isDuplikat) {
             alert('Buku dengan judul yang sama sudah ada dalam daftar.');
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (const b of buku) {
             const itemBuku = buatItemBuku(b);
-            if (b.isSelesai) {
+            if (b.isComplete) {
                 daftarRakBukuSelesai.appendChild(itemBuku);
             } else {
                 daftarRakBukuBelumSelesai.appendChild(itemBuku);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function toggleStatusSelesai(id) {
         const indeks = buku.findIndex(b => b.id === id);
         if (indeks !== -1) {
-            buku[indeks].isSelesai = !buku[indeks].isSelesai;
+            buku[indeks].isComplete = !buku[indeks].isComplete;
             simpanBukuKeLocalStorage();
             perbaruiRakBuku();
         }
@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const hasilPencarian = buku.filter(b => {
             return (
-                b.judul.toLowerCase().includes(query) ||
-                b.pengarang.toLowerCase().includes(query) ||
-                b.tahunTerbit.toString().includes(query)
+                b.title.toLowerCase().includes(query) ||
+                b.author.toLowerCase().includes(query) ||
+                b.year.toString().includes(query)
             );
         });
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (const b of hasilPencarian) {
             const itemBuku = buatItemBuku(b);
-            if (b.isSelesai) {
+            if (b.isComplete) {
                 daftarRakBukuSelesai.appendChild(itemBuku);
             } else {
                 daftarRakBukuBelumSelesai.appendChild(itemBuku);
@@ -121,17 +121,17 @@ document.addEventListener('DOMContentLoaded', function () {
         tombolAksi.className = 'aksi';
 
         const judul = document.createElement('h3');
-        judul.textContent = b.judul;
+        judul.textContent = b.title;
         judul.style.color = 'white';
         judul.style.marginBottom = '10px';
 
         const pengarang = document.createElement('p');
-        pengarang.textContent = 'Pengarang: ' + b.pengarang;
+        pengarang.textContent = 'Pengarang: ' + b.author;
         pengarang.style.color = 'white';
         pengarang.style.marginBottom = '10px';
 
         const tahunTerbit = document.createElement('p');
-        tahunTerbit.textContent = 'Tahun Terbit: ' + b.tahunTerbit;
+        tahunTerbit.textContent = 'Tahun Terbit: ' + b.year;
         tahunTerbit.style.color = 'white';
         tahunTerbit.style.marginBottom = '10px';
 
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         let tombolToggle;
-        if (b.isSelesai) {
+        if (b.isComplete) {
             tombolToggle = buatTombolAksi('Belum selesai di Baca', 'kuning', function () {
                 toggleStatusSelesai(b.id);
             });
@@ -183,6 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
         tombol.addEventListener('click', clickHandler);
         return tombol;
     }
-    
+
     perbaruiRakBuku();
 });
